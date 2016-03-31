@@ -47,7 +47,7 @@ Now you can connect to the server without the amazon pem using `ssh ubuntu@myser
 ### Automatically
 Download and run the script:
 ```bash
-curl -s https://example.com/script.sh | source /dev/stdin
+curl -s https://raw.githubusercontent.com/bons/b-bash-scripts/master/scripts/setup.sh | source /dev/stdin
 ```
 
 ### Manually
