@@ -11,6 +11,11 @@ Our server will have this configuration:
 - User for Webapp: nodejs
 
 For a better interaction between the server and github see [How to configure our server with Github](./server-with-github)
+## Index
+- [Creation](#creation)
+- [SetUp](#setup)
+  - [Automatically](#automatically)
+  - [Manually](#manually)
 
 ## Creation
 
@@ -41,7 +46,7 @@ ssh -i mypair.pem ubuntu@myserverip
 
 _NOTE: replace __mypair.pem__ with the path of the file you download in step 4, replace __myserverip__ with the ip of the server_
 
-## Set Up
+## SetUp
 
 Connect via ssh to the server.
 You need to add your ssh public key in to authorized keys of the user ubuntu. (see [how to create a ssh key](./how-to-create-ssh-key.md))
