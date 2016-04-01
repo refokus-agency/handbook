@@ -1,28 +1,38 @@
 # Setup Ubuntu Server in Amazon EC2
 
-In this tutorial you will learn how to create and set up a Ubuntu Server for use with Bons' environment
+In this tutorial you will learn how to create and set up a Ubuntu Server for use with Bons' environment.
+Our server will have this configuration:
+- Programs
+  - Nodejs
+    - Gulp
+    - Foreverjs
+  - MongoDB
+- Sudoer user: ubuntu
+- User for Webapp: nodejs
+
+For a better interaction between the server and github see [How to configure our server with Github](./server-with-github)
 
 ## Creation
 
 ### Step 1
   Go to [EC2 Management Console](https://console.aws.amazon.com/ec2/v2/home) go to Instances -> Launch Instance
-  [photo]
+  ![photo](../photos/setup/photo-1.png?raw=true)
 
 ### Step 2
   Select the Ubuntu Server in this case we will use Ubuntu Server 14.04
-  [photo]
+  ![photo](../photos/setup/photo-2.png?raw=true)
   Select the instance type, instance details, storage
 
 ### Step 3
   Always add a tag name
-  [photo]
+  ![photo](../photos/setup/photo-3.png?raw=true)
 
   Configure the security group, make sure to open the ssh port (22) and the port of your Nodejs process (in Bons we use `8080`)
-  [photo]
+  ![photo](../photos/setup/photo-4.png?raw=true)
 
 ### Step 4
   Create and download a key pair for ssh connections
-  [photo]
+  ![photo](../photos/setup/photo-5.png?raw=true)
 
 Now we have the new instance of the server done. You can connect via ssh to the server using this command in your terminal
 ```bash
@@ -92,4 +102,17 @@ sudo apt-get install -y mongodb-org
 ```
 
 #### Step 3
-TODO create user
+For security you need to create a new user to run the nodejs process.
+```bash
+sudo useradd nodejs -m -s /bin/bash
+```
+Now you can login as nodejs and add your ssh public key in to authorized_keys
+```bash
+sudo su nodejs
+mkdir ~/.ssh
+nano ~/.ssh/authorized_keys
+```
+Paste the content of your __id_rsa.pub__ on the last line. Type ctrl-x to exit and save the file.
+Now you can connect to the server without the amazon pem using `ssh nodejs@myserverip`
+
+Clone the project repository with this user.
