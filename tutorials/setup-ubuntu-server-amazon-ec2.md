@@ -10,7 +10,7 @@ Our server will have this configuration:
 - Sudoer user: ubuntu
 - User for Webapp: nodejs
 
-For a better interaction between the server and github see [How to configure our server with Github](./server-with-github)
+For a better integration between the server and github see [How to configure our server with Github](./server-with-github)
 ## Index
 - [Creation](#creation)
 - [SetUp](#setup)
