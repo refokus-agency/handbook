@@ -49,7 +49,7 @@ _NOTE: replace __mypair.pem__ with the path of the file you download in step 4, 
 ## SetUp
 
 Connect via ssh to the server.
-You need to add your ssh public key in to authorized keys of the user ubuntu. (see [how to create a ssh key](./how-to-create-ssh-key.md))
+You need to add your ssh public key in to authorized keys of the user ubuntu. (see [how to create a ssh key](https://help.github.com/articles/generating-an-ssh-key/))
 
 Edit the file __~/.ssh/authorized_keys__:
 ```bash
