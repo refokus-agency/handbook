@@ -1,6 +1,8 @@
 <code_scheme name="Bons">
   <JSCodeStyleSettings>
+    <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
     <option name="SPACE_BEFORE_PROPERTY_COLON" value="true" />
+    <option name="ALIGN_OBJECT_PROPERTIES" value="2" />
     <option name="ALIGN_MULTIPLE_ASSIGNMENTS" value="true" />
   </JSCodeStyleSettings>
   <XML>
