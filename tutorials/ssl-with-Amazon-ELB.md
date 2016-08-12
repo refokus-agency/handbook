@@ -26,9 +26,7 @@ Give __yourdomain.com.crs__ to the ssl provider and download the new certificate
 - __[some string with bundle].crt:__ certificate chain for ELB
 Now we have all the files we need.
 
-Let's set up the ELB. Go to amazon console and create a new load balancer, add the https listener
-Open the port 443 in the load balance
-Add the ssl certificate to the 443 listener
+Let's set up the ELB. Go to amazon console and create a new load balancer, add the https listener. Open the port 443 in the load balance. Add the ssl certificate to the 443 listener.
 
 - __Private key__ -> use the content of __yourdomain.com.pem__
 - __Public key certificate__ -> use the content of __[some string].crt__
