@@ -4,7 +4,7 @@
 
 #### Spaces
 
-No tabs or unecesary spaces at the end a line or tab.
+No unecesary tabs/spaces at the end of a line.
 
 Unix-style linebreaks ('\n'), no Windows-style ('\r\n').
 
