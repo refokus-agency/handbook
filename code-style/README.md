@@ -1,39 +1,40 @@
 # code-style-guide
 
-### Nombres y formato
+### Names & Formats
 
-#### Espacios blancos
+#### Spaces
 
-Sin tabs ni espacios blancos al final de la linea.
+No tabs, neither unecesary spaces at the end of tabs or at the end of the line.
 
 Unix-style linebreaks ('\n'), no Windows-style ('\r\n').
 
-#### Tamaño de linea
+#### Line Size
 
-120 caracteres o menos.
+~120 characters.
 
 #### Fin de linea
 
-Evitar el uso de `;` en el final de las lineas a menos que el código lo requiera
+Avoid the use of semi-colon `;` at the end of the line, unless it is necesary for the code.
 
 #### Comillas
-Siempre usar comillas simples (`'`) para declarar strings. 
-En el caso de que se necesite concatenar una variable usar comillsa invertidas (`` ` ``). [Template strings](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings)
 
-#### Indentacion
+Always use simple-quotes (`'`) to declare strings. 
+In the case of variable concatenation, use back-tick (`` ` ``). [Template strings](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings)
 
-Dos espacios por nivel logico.
+#### Indentation
 
-#### Estructuras de control
+Two spaces for logic level.
 
-Usar el estilo de llaves [1tbs](http://eslint.org/docs/rules/brace-style.html#1tbs): la llave izquierda al final de la primer linea, llaves a ambos lados del `else`.
-Si el código lo permite usar una sola linea sin llaves para `if`.
-Siempre usar llaves si se require un `else`.
+#### Control Structures
 
-Cortar condiciones largas despues de los conectores `&&` y `||`.
+Use the brace style  [1tbs](http://eslint.org/docs/rules/brace-style.html#1tbs): place the left brace at the end of the first line, braces on both sides of the `else`.
+If the code allows it, use only one line without braces for `if`
+Always use braces if a `else` is required. 
 
-Colocar un espacio antes de del parentesis izquierdo, a menos que se este llamando a una funcion.
-Colocar un espacio antes de la llave izquierda.
+Cut long conditionals after the conections `&&` or `||`.
+
+Place a space before the left parenthesis, unless this parenthesis is calling a function.
+Place a space before the left brace.
 
 ```javascript
 function foo () {
@@ -59,9 +60,10 @@ try {
 if (foo) bar()
 ```
 
-#### Clases
-Las clases deben usar [camelCase](https://en.wikipedia.org/wiki/CamelCase). 
-Siempre deben hacer referencia a que tipo de clase es, ej: el nombre de una clase para un controller llamado foo deberia ser `FooController`
+#### Classes
+
+Classes must use [camelCase](https://en.wikipedia.org/wiki/CamelCase). 
+Always reference to the class type. ie: the name of a class for a controller named "foo" should be `FooController`
 
 ```javascript
 class FooController {
@@ -72,11 +74,11 @@ class FooController {
 }
 ```
 
-#### Metodos y funciones
+#### Methods & Functions
 
-Las funciones deben usar [camelCase](https://en.wikipedia.org/wiki/CamelCase) pero no se debe escribir en mayuscula la primer letra.
+Functions must use [camelCase](https://en.wikipedia.org/wiki/CamelCase) with the first letter in lowercase. 
 
-*NOTA: Las funciones con nombre en una sola linea estan prohibidas.*
+*NOTE: Do NOT use Named Functions in one line.*
 
 ```javascript
 doSomething: (aFoo, aBar) => {
@@ -88,8 +90,10 @@ function doSomething (aFoo, aBar) {
   ...
 }
 ```
-Para declarar funciones anónimas utilizar [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
-Siempre utilizar parentesis en los parámetros.
+
+To declare an anonymous function using [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+Always use parentheses on the parameters.
+
 
 ```javascript
 (aFoo, aBar) => { ... }
@@ -98,8 +102,8 @@ Siempre utilizar parentesis en los parámetros.
 ```
 #### Variables
 
-Las variables deben usar [camelCase](https://en.wikipedia.org/wiki/CamelCase) pero no se debe escribir en mayuscula la primer letra.
-Deben ser declaradas siempre como `const`, `var` y `let` al principio de la estructura logica, segun corresponda.
+Variables must use [camelCase](https://en.wikipedia.org/wiki/CamelCase) with the first letter in lowercase. 
+At the begining of the logic structure, variables must be always declared as `const`, `var` or `let`
 
 ```javascript
 const foo, bar
@@ -115,26 +119,27 @@ for (let i = 0; i < 5; i++) {
 
 #### Operators
 
-Expresiones demasiado largas no unidas por `&&` y `||` se deben cortar para que el operador quede en la primer linea y la expresion empiece en la misma columna de la expresion en la primer linea.
+In the case of expressions that are not connected by `&&` or `||` and prolonging the line over 120 characters, move the operator to the line below and aligned it with the first line expression. 
 
 ```javascript
 a = someLongVariable + 
     someOtherLongVariable
 ```
 
-Los operadores como `typeof` deben tener sus operandos entre parentesis.
+Operators as `typeof` must have their operands between parentheses.
 ```javascript
 typeof('foo') === 'foo'
 ```
-### Practicas Generales
-- No poner `else` despues de un `return`
-- No dejar `console.log` de debug 
-- Terminar el archivo con una nueva linea 
-- Declarar variables locales lo más cerca que se pueda de su uso.
+### Generales Practices
+- Do not use `else` after a `return`
+- Do not leave `console.log` from debug
+- End each file with a new line
+- Declare local variables as close as possible based on how it is going to be used
 
-### Practicas de Javascript 
-- Siempre comparar con triple operadores. `x === y` o `x !== y`
-- No comparar `x === true` o `x === false`. Usar `(x)` o `(!x)`. Comparar objetos contra `null`, numeros contra `0` o strings contra `""` si hay posibilidad de confusion.
-- Asegurarse que el codigo no emita ninguna advertencia de [strict Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode)
-- Usar `[value1, value2]` para declarar arrays
-- Usar `{ member: value }` para declarar objetos no instanciables
+### JavaScript Practices
+
+- Allways compare with tripple operators. `x === y` o `x !== y`
+- Do not compare `x === true` o `x === false`. Use `(x)` o `(!x)`. Compare objects with `null`, numbers with `0` and strings with `""` to avoid confusions.
+- Make sure the code doesn't return any alert for [strict Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode)
+- Declare arrays using `[value1, value2]`
+- Declare not instantiable objects using `{ member: value }`
