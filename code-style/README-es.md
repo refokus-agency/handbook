@@ -99,7 +99,7 @@ Siempre utilizar parentesis en los parámetros.
 #### Variables
 
 Las variables deben usar [camelCase](https://en.wikipedia.org/wiki/CamelCase) pero no se debe escribir en mayuscula la primer letra.
-Deben ser declaradas siempre como `const`, `var` y `let` al principio de la estructura logica, segun corresponda.
+Deben ser declaradas siempre como `const`, `var` ó `let` al principio de la estructura logica, segun corresponda.
 
 ```javascript
 const foo, bar
@@ -115,7 +115,7 @@ for (let i = 0; i < 5; i++) {
 
 #### Operators
 
-Expresiones demasiado largas no unidas por `&&` y `||` se deben cortar para que el operador quede en la primer linea y la expresion empiece en la misma columna de la expresion en la primer linea.
+Expresiones demasiado largas no unidas por `&&` ó `||` se deben cortar para que el operador quede en la primer linea y la expresion empiece en la misma columna de la expresion en la primer linea.
 
 ```javascript
 a = someLongVariable + 
