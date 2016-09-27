@@ -4,7 +4,7 @@
 
 #### Spaces
 
-No tabs, neither unecesary spaces at the end of tabs or at the end of the line.
+No tabs or unecesary spaces at the end a line or tab.
 
 Unix-style linebreaks ('\n'), no Windows-style ('\r\n').
 
@@ -12,11 +12,11 @@ Unix-style linebreaks ('\n'), no Windows-style ('\r\n').
 
 ~120 characters.
 
-#### Fin de linea
+#### Line Ending
 
-Avoid the use of semi-colon `;` at the end of the line, unless it is necesary for the code.
+Avoid the use of semi-colon `;` at the end of the line, unless it has a purpouse for the code.
 
-#### Comillas
+#### Quotes
 
 Always use simple-quotes (`'`) to declare strings. 
 In the case of variable concatenation, use back-tick (`` ` ``). [Template strings](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings)
@@ -91,7 +91,7 @@ function doSomething (aFoo, aBar) {
 }
 ```
 
-To declare an anonymous function using [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+Declare anonymous functions using [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 Always use parentheses on the parameters.
 
 
@@ -103,7 +103,7 @@ Always use parentheses on the parameters.
 #### Variables
 
 Variables must use [camelCase](https://en.wikipedia.org/wiki/CamelCase) with the first letter in lowercase. 
-At the begining of the logic structure, variables must be always declared as `const`, `var` or `let`
+Variables must be always declared as `const`, `var` or `let` at the begining of the logic structure.
 
 ```javascript
 const foo, bar
