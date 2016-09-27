@@ -27,8 +27,9 @@ Dos espacios por nivel logico.
 #### Estructuras de control
 
 Usar el estilo de llaves [1tbs](http://eslint.org/docs/rules/brace-style.html#1tbs): la llave izquierda al final de la primer linea, llaves a ambos lados del `else`.
-Si el código lo permite usar una sola linea sin llaves para `if` `else`.
-
+Si el código lo permite usar una sola linea sin llaves para `if`.
+Siempre usar llaves si se require un `else`.
+ 
 Cortar condiciones largas despues de los conectores `&&` y `||`.
 
 Colocar un espacio antes de del parentesis izquierdo, a menos que se este llamando a una funcion.
@@ -56,7 +57,6 @@ try {
 }
 
 if (foo) bar()
-else if (baz) boom()
 ```
 
 #### Clases
