@@ -6,8 +6,8 @@
 ```javaScript
 if (!_.has(where, 'user.id')) return reject(errors.handle('#missingUserId'))
 ```
-* Always receives an object and return another object (`{}` is a valid object) or a Promise.
-* Reducers don't call another reducer. When you code a reducer that mustcall multiple times. Example
+* Always receives an object and returns another object (`{}` is a valid object) or a Promise.
+* Reducers doesn't call another reducer. When you code a reducer that must be called multiple times do it using a private function. Example
 ```javaScript
 export function opreateSingle({seneca, user, where}){
     return _proccessSingleUser(user.name, where.id)
@@ -23,19 +23,19 @@ function _processSingle(name, id) {_
     ...
     }
 ```
-* Instead of user a reducer to access DB, user a helper.
-* Don't use anonymous functions for process. Donn't comment this functions.
+* Instead of use a reducer to access DB, use a helper.
+* Don't use anonymous functions for process. Don't comment this functions.
 * For documentation, in @returns use the element that overwrites.
 
 ## Commands
 
-* User specific `cmd` for each type findOne/All byEmail/Id. Example
+* Use specific `cmd` for each type findOne/All byEmail/Id. Example
 ```javaScript
 cmd:'findOneByEmail'
 cmd:'findOneById'
 cmd:'findAll'
 ```
-* `where` & `opData` always must user the entity. Example
+* `where` & `opData` always must use the entity. Example
 ```javaScript
 where: {
     user: {
