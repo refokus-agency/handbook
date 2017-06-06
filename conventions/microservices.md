@@ -49,6 +49,25 @@ where: {
 
 * Add the command for which the pipe is intended.
 
+### Validation
+
+* Validate Entities in `opData` & `where`. One validation per function. Ex:
+```javaScript
+.then(validateUserInWhere, $critical)
+```
+* Validate each field of the entity. One validation per function. Ex:
+```javaScript
+.then(validateUserIdFormWhere, $critical)
+.then(validateUserNameFormWhere, $critical)
+```
+After the validation, start operate with the fields
+```javaScript
+.then(validateUserFormWhere, $critical)
+.then(validateUserIdFormWhere, $critical)
+.then(validateUserNameFormWhere, $critical)
+.then(operateWithUserIdAndUserNameFields)
+```
+
 ## Tests
 
 * Test for `ok`, `undefined`, `null` & `invalid`.
