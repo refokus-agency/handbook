@@ -1,4 +1,4 @@
-# Seneca Microservices conventions
+# Microservices conventions
 
 ## Reducers
 * Do only one thing, and do it well.
