@@ -9,8 +9,9 @@
 |   |   |   +-- query.js
 |   |   +-- types
 |   |   |   +-- index.js
-|   |   |   +-- mutation.js
-|   |   |   +-- query.js
+|   |   |   +-- mutation.graphql
+|   |   |   +-- query.graphql
+|   |   |   +-- some-type.graphql
 |   |   +-- index.js
 |   +-- pipes
 |   |   +-- filters
