@@ -1,35 +1,69 @@
 # Microservices conventions
-
-## Filters
+## Folder structure
+```
++-- src
+|   +-- graphql
+|   |   +-- resolvers
+|   |   |   +-- index.js
+|   |   |   +-- mutation.js
+|   |   |   +-- query.js
+|   |   +-- types
+|   |   |   +-- index.js
+|   |   |   +-- mutation.js
+|   |   |   +-- query.js
+|   |   +-- index.js
+|   +-- pipes
+|   |   +-- filters
+|   |   |   +-- create
+|   |   |   |   +-- some-create-filter-name.js
+|   |   |   +-- delete
+|   |   |   +-- read
+|   |   |   +-- update
+|   |   +-- index.js
+|   |   +-- create-{entity}.js
+|   |   +-- read-{entity}.js
+|   +-- srv
+|   |   +-- index.js
+|   |   +-- service.js
+|   |   +-- routes.js (only if we need to add some REST endpoint)
++-- tests
+|   +-- integration
+|   |   +-- graphql
+|   |   +-- pipes
+|   +-- unit
+|   |   +-- filters
++-- package.json
+...
+```
+### Graphql
+* Keep all logic of graphql inside the folder `src/graphql`
+#### Resolvers
+* Create one file per resolver
+* Import the pipes using the path `../pipes`. Avoid to call pipes directly ~`../pipes/some-pipe-name.js`~
+#### Types
+* Create one file per type
+### Filters
+* Create one file per filter function
+### Pipes
+* Create one file per action entity. ie: `create-item.js`
+### Tests
+* Create one file per file to test.
+* Use this schema for naming `{file-to-test-name}.spec.js`
+## Code
+### Filters
 * Do only one thing, and do it well.
 * Check for needed params, and throw error if someone is missing. Example
 ```javaScript
 if (!_.has(user, 'id')) return reject(errors.handle('#missingUserId'))
 ```
 * Always receives an object and returns another object (`{}` is a valid object) or a Promise.
-* Filters doesn't call another reducer. When you code a reducer that must be called multiple times do it using a private function. Example
-```javaScript
-export function opreateSingle({seneca, user, where}){
-    return _proccessSingleUser(user.name, where.id)
-    }
-
-export function operateMultiple({seneca, users, where}){
-    let processedUsers = users.map((user)=>{
-        return _processSingle(user.name, where.id)
-        })
-    }
-
-function _processSingle(name, id) {_
-    ...
-    }
-```
 * Don't use anonymous functions for process.
 
-## Pipes
+### Pipes
 
-* Add the command for which the pipe is intended.
+* For read actions always return arrays. ie: `findItems() => [item, item, item]` `findItemsById([id]) => [item]`
 
-## Tests
+### Tests
 
 * Test for `ok`, `undefined`, `null` & `invalid`.
 * Test description must be
