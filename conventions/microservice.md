@@ -47,6 +47,7 @@
 * Create one file per filter function
 ### Pipes
 * Create one file per action entity. ie: `create-item.js`
+* Allowed actions `create | read | update | delete`
 ### Tests
 * Create one file per file to test.
 * Use this schema for naming `{file-to-test-name}.spec.js`
@@ -62,7 +63,8 @@ if (!_.has(user, 'id')) return reject(errors.handle('#missingUserId'))
 
 ### Pipes
 
-* For read actions always return arrays. ie: `findItems() => [item, item, item]` `findItemsById([id]) => [item]`
+* Add `$` as prefix of the function name. ie: `$readItems`
+* For read actions always return arrays. ie: `$readItems() => [item, item, item]` `$readItemsById([id]) => [item]`
 
 ### Tests
 
