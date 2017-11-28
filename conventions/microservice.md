@@ -52,6 +52,12 @@
 * Create one file per file to test.
 * Use this schema for naming `{file-to-test-name}.spec.js`
 ## Code
+
+### Queries
+* Always use plural names
+### Mutations
+* Use camelCase
+* Use this format for naming `${verb}${entity}${modificators}`. ie: `readEntity | readEntityById` 
 ### Filters
 * Do only one thing, and do it well.
 * Check for needed params, and throw error if someone is missing. Example
