@@ -54,10 +54,11 @@
 ## Code
 
 ### Queries
-* Always use plural names
+* Always use the entity name. ie `user | folder`
 ### Mutations
 * Use camelCase
-* Use this format for naming `${verb}${entity}${modificators}`. ie: `readEntity | readEntityById` 
+* Use this format for naming `${entity}${verb}${modificators}`. ie: `entityRead | entityReadById` 
+* For naming input types use `${entity}Input${msName}${verb}`. ie: `entityInputMyMsRead`
 ### Filters
 * Do only one thing, and do it well.
 * Check for needed params, and throw error if someone is missing. Example
