@@ -55,7 +55,7 @@
       - /layouts
 
 ## Code style
-###Javascript
+### Javascript
 We use Eslint as our linter
 We don't allow any code with errors to be released. Errors will literally cause bundle compilation to abort. However eslint do not block the development build.
 Variable and function names should be camelCase, class names should be UpperCamelCase. Constants should be ALL_CAPS.
@@ -73,9 +73,9 @@ event handlers should follow the name convention: "handle<component>On<action>".
 Custom React Class methods should be written as arrow functions.
 handleTagInputOnClick = () => {console.log(‘click’)}
 
-###Classifications for Presentational Components vs Container Components
+### Classifications for Presentational Components vs Container Components
 
-####Presentational components
+#### Presentational components
 Are concerned with how things look.
 May contain both presentational and container components inside, and usually have some DOM markup and styles of their own.
 Often allow containment via this.props.children.
@@ -85,14 +85,14 @@ Receive data and callbacks exclusively via props.
 Rarely have their own state (when they do, it’s UI state rather than data).
 Are written as functional components unless they need state, lifecycle hooks, or performance optimizations.
 
-####Container components
+#### Container components
 Are concerned with how things work.
 May contain both presentational and container components inside but usually don’t have any DOM markup of their own except for some wrapping divs, and never have any styles.
 Provide the data and behavior to presentational or other container components.
 Call Redux actions and provide these as callbacks to the presentational components.
 Are often stateful, as they tend to serve as data sources.
 
-###On unit Tests
+### On unit Tests
 Our unit test setup uses mocha, expect, sinon, and enzyme
 Free-standing functions and classes should be unit tested, with both common and edge cases.
 Actions and reducers should be tested.
@@ -100,7 +100,7 @@ React components should be given basic mounting tests using enzyme. The idea is 
 React container should be given basic mounting tests using enzyme. If the container has some logic it should be tested as well.
 
 
-##Flow
+## Flow
 We use flow for everything! Including flow is mandatory in every non-spec file (this is enforced by the linter). Using flow for typing out the of react components means we can skip prop-types except in special circumstances. Using flow for this means our props are checked at compile-time rather than at runtime, and that the checking is much stricter. 
 Type Redux using Flow guide
 
@@ -111,11 +111,11 @@ Libraries must have cross-browser support (min IE10 and all modern Browser)
 Libraries with a community behind have a plus on the decision taking
 
 
-##CSS Stylesheet
+## CSS Stylesheet
 The primary architectural division is between
 Written in camelCase, using Css Modules we don’t have to worry about using the same class name along the application, so be really declarative
 colors live in a separate file, so you have to import them when use one
 Media queries boundaries live in a separate file, so you have to import them when use one
 
->Use PostCSS to modularise components by component
+> Use PostCSS to modularise components by component
 Avoid cross-browsing unsupported styles (min IE10 and all modern Browser)
