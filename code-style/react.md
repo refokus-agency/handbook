@@ -58,17 +58,30 @@
 ### Javascript
 We use Eslint as our linter
 We don't allow any code with errors to be released. Errors will literally cause bundle compilation to abort. However eslint do not block the development build.
-Variable and function names should be camelCase, class names should be UpperCamelCase. Constants should be ALL_CAPS.
+Variable and function names should be camelCase, class names should be UpperCamelCase. Constants should be ALL_CAPS. \
+Prefer latest EcmaScript syntax. Some examples are
 
+```javascript
+{...foo, ...bar}
+```
+~~`Object.assign({}, foo, bar)`~~
+
+- Object deconstruction over multiple assignments
+```javascript
+  const {foo, bar} = this.props
+```
+~~`const foo = this.props.foo`~~ \
+~~`const bar = this.props.bar`~~
+
+- Destructuring within the parameter list over single object
+```javascript
+const myFunction = ({foo, bar}) => {console.log(foo + bar)}
+```
+~~`const myFunction = (params) => {console.log(params.foo + params.bar)}`~~
 ### React
 We use Redux for store our shared data
 All React components and container must be written on Jsx and Es6 features
-Prefer object rest spread to Object.assign
-{...foo, ...bar} vs Object.assign({}, foo, bar)
-Use object deconstruction liberally when dealing with this.props, this.state, function arguments, etc.
-const {foo, bar} = this.props
-const myFunction = ({foo, bar}) => {console.log(foo + bar)}
-event handlers should follow the name convention: "handle<component>On<action>".
+Event handlers should follow the name convention: "handle<component>On<action>".
 <TagInput onClick={this.handleTagInputOnClick}/>
 Custom React Class methods should be written as arrow functions.
 handleTagInputOnClick = () => {console.log(‘click’)}
