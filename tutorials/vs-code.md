@@ -2,7 +2,7 @@
 
 * [Download](https://code.visualstudio.com/insiders/) Visual Studio Code Insiders and install it
 * Installing the sync extension
-  * Open vscode from Applications or `vscode-insiders .` from terminal
+  * Open vscode from Applications or `code-insiders .` from terminal
   * Go to the extension tab (`cmd-shift-x`)
   * Search for the `Settings Sync` extension and install it
   * Reload
